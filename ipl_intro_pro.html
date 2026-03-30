@@ -201,6 +201,10 @@ function explodeParticles() {
             opacity: 0,
             duration: 1.5,
             onComplete: () => p.remove()
+  /* REDIRECT AFTER INTRO */
+  setTimeout(() => {
+    window.location.href = "index.html";
+}, 6000); // adjust timing if needed
         });
     }
 }
