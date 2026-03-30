@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IPL Intro FIXED</title>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+/* PLAYERS */
+.player {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 250px;
+    background-size: cover;
+    transform: translateY(400px);
+}
+
+.player1 { left: 10%; background-image: url('https://files.catbox.moe/a88yj5.jpg'); }
+.player2 { left: 30%; background-image: url('https://files.catbox.moe/llqjo6.jpg'); }
+.player3 { left: 50%; background-image: url('https://files.catbox.moe/yih8dn.jpg'); }
+.player4 { left: 70%; background-image: url('https://files.catbox.moe/0xz24v.jpg'); }
+
+/* TROPHY */
+.trophy {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 80px;
+}
+
+/* TITLE */
+.title {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    opacity: 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player player1"></div>
+<div class="player player2"></div>
+<div class="player player3"></div>
+<div class="player player4"></div>
+
+<div class="trophy">🏆</div>
+<div class="title">INDIAN PREMIER LEAGUE</div>
+
+<script>
+
+/* PLAYER ANIMATION */
+gsap.to(".player", {
+    y: 0,
+    duration: 1.5,
+    stagger: 0.3
+});
+
+/* TROPHY */
+gsap.to(".trophy", {
+    scale: 1.2,
+    duration: 1.5,
+    delay: 1
+});
+
+/* TEXT */
+gsap.to(".title", {
+    opacity: 1,
+    duration: 1.5,
+    delay: 2
+});
+
+</script>
+
+</body>
+</html>
